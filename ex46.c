@@ -15,4 +15,5 @@ int main () {
 	
 	printf(" O numero escrito em reverso eh : %d%d%d\n",reverso_centena,reverso_dezena,reverso_unidade);
 	return 0;
+
 }

@@ -2,7 +2,7 @@
 
 int main (){
     float nota1,nota2,nota3 ;
-    printf("Informe as Três Notas : ");
+    printf("Informe as Tres Notas : ");
     scanf("%f %f %f", &nota1,&nota2,&nota3);
 
     float media = ( nota1 + nota2 + nota3) / 3.0;
