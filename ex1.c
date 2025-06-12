@@ -1,17 +1,24 @@
-#include <stdio.h>
-#include <conio.h>
+/*'Escreva um programa que leia um número inteiro positivo N e calcule a soma de todos
+os números inteiros menores ou iguais a 'N*/
 
-void main() {
-	int n1,n2;
-	printf("Digite o primeiro numero:");
-	scanf("%d",&n1);
-	printf("Digite o segundo numero:");
-	scanf("%d",&n2);
-	
-	if (n2%n1 == 0){
-		printf("%d eh muliplo de %d\n",n2,n1);
-	}
-	else { printf ("%d nao eh multiplo de %d\n",n2,n1);
-	}
-	getch ();
+#include <stdio.h>
+
+int main () {
+    int k,N;
+    int soma=0;
+
+    printf("Informe um numero inteiro N:");
+    scanf("%d",&N);
+
+    if(N < 0) {
+        printf("Valor invalido.Por favor digite um numero inteiro positivo");
+        return 1;
+    }
+
+    for(k =1; k <= N; k++) {
+        soma = soma + k;
+    }
+
+    printf("A soma de todos os numeros inteiros menores igual a %d eh = %d",N,soma);
+return 0;
 }
