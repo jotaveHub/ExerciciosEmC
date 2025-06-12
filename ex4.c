@@ -1,21 +1,23 @@
 #include <stdio.h>
-#include <math.h>
+#include <conio.h>
 
-  int main () {
-     int dobro,triplo, quadrado, cubo, raiz_quadrada, valor;
-     printf("Digite o valor:");
-     scanf("%d", &valor);
-
-     dobro = 2 * valor ;
-     triplo = 3 * valor;
-     quadrado = pow (valor,2);
-     cubo = pow (valor,3);
-     raiz_quadrada = sqrt (valor);
-
-     printf("O dobro do valor eh: %d\n", dobro);
-     printf("O triplo do valor eh: %d\n", triplo);
-     printf("O quadrado do valor eh: %d\n", quadrado);
-     printf("O cubo do valor eh: %d\n", cubo);
-     printf("A raiz quadrada do valor eh: %d\n", raiz_quadrada);
-     return 0;
-    }
+void main () {
+	int n1,n2,n3;
+	printf("Digite os tres numeros:");
+	scanf("%d %d %d",&n1,&n2,&n3);
+	
+	if (n1 == n2 || n1 == n3 || n2 == n3){
+		printf("Informe numeros distintos!.\n");
+	}
+	     else {
+    if (n1 >n2 && n1>n3) {
+    printf("O maior numero eh : %d\n",&n1);	
+	}
+	else if (n2>n1 && n2>n3) {
+		printf("O maior numero eh : %d\n",&n2);
+	}
+	else { printf("O maior numero eh: %d\n",n3);
+	   }	
+	}
+	getch();
+}

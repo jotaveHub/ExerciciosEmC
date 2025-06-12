@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include <conio.h>
- 
-int main () {
-    int n1,n2,n3;
-    printf("Digite as 3 notas :");
-    scanf("%d %d %d",&n1,&n2,&n3);
 
-    int media = (n1 + n2 + n3) / 3 ;
-    printf("A media final obtida foi : %.d\n", media);
-    getch ();
+void main() {
+	int n1,n2;
+	printf("Digite o primeiro numero:");
+	scanf("%d",&n1);
+	printf("Digite o segundo numero:");
+	scanf("%d",&n2);
+	
+	if (n2%n1 == 0){
+		printf("%d eh muliplo de %d\n",n2,n1);
+	}
+	else { printf ("%d nao eh multiplo de %d\n",n2,n1);
+	}
+	getch ();
 }
