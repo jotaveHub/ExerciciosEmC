@@ -1,32 +1,37 @@
-/*Escreva  um  programa  que  leia  um  número  inteiro  N  e  imprima  o  enésimo  termo  da 
-série de Fibonacci. (1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...).*/
+/*Escreva um programa que leia vários itens de uma compra feita pelo usuário. Para 
+cada  item,  o  usuário  deve  informar  o  seu  nome,  o  seu  preço  unitário  e  a 
+quantidade comprada. Após cada leitura, o programa deve perguntar ao usuário 
+se ele deseja 
+adicionar  um  novo  item  ou  fechar  a  conta.  O  programa  deve  considerar que o 
+usuário  irá digitar pelo menos um item. Após terminar a leitura, o programa deve 
+mostrar o   valor da conta à vista e o valor da conta a prazo. O valor da conta a 
+prazo corresponde   à soma do valor total de cada item digitado pelo usuário. O 
+valor da conta à vista  corresponde ao valor da conta a prazo com um desconto de 
+15%. */
+
 
 #include <stdio.h>
 
 int main() {
-    int num,i;
-    int termo_anterior = 1;
-    int termo_atual = 1;    
-    int proximo_termo;      
+    char produto[20];
+    float valor_produto, total_prazo = 0, total_avista;
+    int quantidade;
+    char opcao;
 
-    printf("Informe um numero inteiro positivo para N: ");
-    scanf("%d",&num);
-    if (num <= 0) {
-        printf("Entrada invalida, digite um numero inteiro positivo.\n");
-        return 1; 
-    }
-    if (num == 1 || num == 2) {
-        printf("O %d termo da serie de Fibonacci eh: 1\n", num);
-        return 0; 
-    }
-      
-    for (i = 3; i <= num; i++) {
-        proximo_termo = termo_anterior + termo_atual; 
-        termo_anterior = termo_atual;                 
-        termo_atual = proximo_termo;                  
-    }
-    printf("O %d termo da serie de Fibonacci eh: %d\n", num, termo_atual);
+    do {
+        printf("Informe o Produto, o valor e a quantidade comprada: ");
+        scanf("%19s %f %d", produto, &valor_produto, &quantidade);
+
+        total_prazo += valor_produto * quantidade;
+
+        printf("Deseja adicionar novo item ou fechar a conta? (S) para Adicionar, (F) para Fechar: ");
+        scanf(" %c", &opcao);
+    } while (opcao == 'S' || opcao == 's');
+
+    total_avista = total_prazo * 0.85;
+
+    printf("Valor total a prazo: %.2f\n", total_prazo);
+    printf("Valor total a vista (com 15%% de desconto): %.2f\n", total_avista);
 
     return 0;
 }
-    
