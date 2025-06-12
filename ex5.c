@@ -1,26 +1,32 @@
+/*Escreva  um  programa  que  leia  um  número  inteiro  N  e  imprima  o  enésimo  termo  da 
+série de Fibonacci. (1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...).*/
+
 #include <stdio.h>
 
 int main() {
-    int numero;
+    int num,i;
+    int termo_anterior = 1;
+    int termo_atual = 1;    
+    int proximo_termo;      
 
-    printf("Digite um numero inteiro entre [1000,9999]:");
-    scanf("%d", &numero);
-
-    if (numero < 1000 || numero > 9999) {
-        printf("Numero fora do intervalo especificado.\n");
+    printf("Informe um numero inteiro positivo para N: ");
+    scanf("%d",&num);
+    if (num <= 0) {
+        printf("Entrada invalida, digite um numero inteiro positivo.\n");
+        return 1; 
     }
-
-    int milhar = numero / 1000;
-    int centena = (numero / 100) % 10;
-    int dezena = (numero / 10) % 10;
-    int unidade = numero % 10;
-
-    if (milhar == unidade && centena == dezena) {
-        printf("%d eh um palindromo.\n",numero);
-    } else {
-        printf("%d nao eh um palindromo.\n",numero);
+    if (num == 1 || num == 2) {
+        printf("O %d termo da serie de Fibonacci eh: 1\n", num);
+        return 0; 
     }
+      
+    for (i = 3; i <= num; i++) {
+        proximo_termo = termo_anterior + termo_atual; 
+        termo_anterior = termo_atual;                 
+        termo_atual = proximo_termo;                  
+    }
+    printf("O %d termo da serie de Fibonacci eh: %d\n", num, termo_atual);
 
     return 0;
 }
-
+    
